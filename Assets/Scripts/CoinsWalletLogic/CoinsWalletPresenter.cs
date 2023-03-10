@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using Zenject;
 
 namespace CoinsWalletLogic
 {
@@ -8,7 +9,8 @@ namespace CoinsWalletLogic
         [SerializeField] private CoinsWalletView _coinsView;
         private CoinsWallet _coinsWallet;
 
-        public void Construct(CoinsWallet coinsWallet)
+        [Inject]
+        private void Construct(CoinsWallet coinsWallet)
         {
             _coinsWallet = coinsWallet;
             enabled = true;
